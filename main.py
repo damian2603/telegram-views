@@ -112,7 +112,7 @@ def check_views():
             telegram_request = requests.get(f'https://t.me/{channel}/{post}', params={'embed': '1', 'mode': 'tme'},
                                 headers={'referer': f'https://t.me/{channel}/{post}', 'user-agent': USER_AGENT})
             real_views = search('<span class="tgme_widget_message_views">([^<]+)', telegram_request.text).group(1)
-            sleep(2)
+            sleep(0.5)
         except: pass
 
 
@@ -134,7 +134,7 @@ def tui():
  
   [ Threads ]: {active_count()}
         ''')
-        sleep(2);system('cls' if name == 'nt' else 'clear')
+        sleep(0.5);system('cls' if name == 'nt' else 'clear')
 
 
 print(logo)
